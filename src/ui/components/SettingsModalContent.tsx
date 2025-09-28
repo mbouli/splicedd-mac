@@ -23,7 +23,7 @@ export default function SettingsModalContent() {
     {(onClose) => (
       <>
         <ModalHeader className="flex flex-col gap-1">
-          { cfg().configured ? "Settings" : "First-time configuration" }
+          {cfg().configured ? "Settings" : "First-time configuration"}
         </ModalHeader>
         <ModalBody className="pb-8 ml-2">
           <div className="space-y-4">
@@ -39,15 +39,15 @@ export default function SettingsModalContent() {
               <Input
                 type="text" required variant="bordered"
                 placeholder='e.g. "D:/Samples/splice"'
-                value={ cfg().sampleDir }
-                onChange={ x => mutateCfgSync(x.target.value, sampleDir) }
+                value={cfg().sampleDir}
+                onChange={x => mutateCfgSync(x.target.value, sampleDir)}
                 startContent={
                   <FolderOpenIcon className="w-4 text-foreground-500 mt-1 mr-1" />
                 }
               />
 
               <BrowseButton variant="bordered" directory
-                onPick={ x => mutateCfgSync(x, sampleDir) }
+                onPick={x => mutateCfgSync(x, sampleDir)}
               >Browse</BrowseButton>
             </div>
 
@@ -61,9 +61,9 @@ export default function SettingsModalContent() {
             </div>
 
             <div>
-              <Switch isSelected={ cfg().placeholders } onValueChange={x  => mutateCfgSync(x, placeholders) }>
-                  Enable placeholders
-                </Switch>
+              <Switch isSelected={cfg().placeholders} onValueChange={x => mutateCfgSync(x, placeholders)}>
+                Enable placeholders
+              </Switch>
             </div>
 
             <div className="space-y-1">
@@ -74,13 +74,13 @@ export default function SettingsModalContent() {
             </div>
 
             <div>
-              <Switch isSelected={ cfg().darkMode } onValueChange={ changeDarkMode }>
-                  Dark mode
-                </Switch>
+              <Switch isSelected={cfg().darkMode} onValueChange={changeDarkMode}>
+                Dark mode
+              </Switch>
             </div>
           </div>
 
-          { !cfg().configured &&
+          {!cfg().configured &&
             <div className="flex">
               <Button
                 color="primary" variant="ghost" className="w-full"
@@ -93,12 +93,12 @@ export default function SettingsModalContent() {
           <br />
 
           <div className="text-foreground-400 text-small">
-            check out the project on <Link href="https://github.com/ascpixi/splicedd" target="_blank">GitHub!</Link>
+            check out the project on <Link href="https://github.com/mbouli/splicedd-mac" target="_blank">GitHub!</Link>
             <br />
 
             (developed with
-            <img src="img/blob-heart.png" className="w-4 inline mx-2"/>
-            by <Link href="https://ascpixi.github.io" target="_blank">@ascpixi</Link>)
+            <img src="img/blob-heart.png" className="w-4 inline mx-2" />
+            by <Link href="https://ascpixi.github.io" target="_blank">@ascpixi</Link>, mac support maintained by <Link href="https://github.com/mbouli" target="_blank">@mbouli</Link>)
           </div>
         </ModalBody>
       </>
